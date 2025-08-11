@@ -1,7 +1,6 @@
 package com.gaurav.accounts.service;
 
 import com.gaurav.accounts.dto.CustomerDto;
-import com.gaurav.accounts.exception.CustomerAlreadyExistsException;
 
 public interface IAccountsService {
 
@@ -9,7 +8,7 @@ public interface IAccountsService {
      *
      * @param customerDto - CustomerDto Object
      */
-    void createAccount(CustomerDto customerDto) throws CustomerAlreadyExistsException;
+    void createAccount(CustomerDto customerDto);
 
     /**
      *
