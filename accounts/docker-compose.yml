@@ -1,0 +1,37 @@
+services:
+  accounts:
+    image: "gauravsalunke15/accounts:s4"
+    container_name: accounts-ms
+    ports:
+      - "8080:8080"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - gauravbank
+  loans:
+    image: "gaurav/loans:s4"
+    container_name: loans-ms
+    ports:
+      - "8090:8090"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - gauravbank
+  cards:
+    image: "gaurav/cards:s4"
+    container_name: cards-ms
+    ports:
+      - "9000:9000"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - gauravbank
+networks:
+  gauravbank:
+    driver: "bridge"
